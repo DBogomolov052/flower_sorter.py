@@ -14,12 +14,10 @@ img = cv2.imread("flowers.jpg")
 
 # Конвертируем в HSV
 hsv_img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
-
 # Ищем цвета
 mask_red = cv2.inRange(hsv_img, lower_red, upper_red)
 mask_green = cv2.inRange(hsv_img, lower_green, upper_green)
 mask_blue = cv2.inRange(hsv_img, lower_blue, upper_blue)
-
 # Объединяем маски
 mask = cv2.bitwise_or(mask_red, mask_green)
 mask = cv2.bitwise_or(mask, mask_blue)
